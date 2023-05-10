@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Filter</title>
+  </head>
+  <body>
+    <h1>Image Filter</h1>
+    <form method="POST" action="/filter" enctype="multipart/form-data">
+      <input type="file" name="image" /><br />
+      <input type="radio" name="filter" value="grayscale" /> Grayscale<br />
+      <input type="radio" name="filter" value="red" /> Red<br />
+      <input type="radio" name="filter" value="blur" /> Blur<br />
+      <input type="radio" name="filter" value="edge_detection" /> Edge
+      Detection<br />
+      <input type="submit" value="Apply Filter" />
+    </form>
+
+    <h1>Audio Cutter</h1>
+    <form method="POST" action="/cut-audio" enctype="multipart/form-data">
+      <input type="file" name="file" required />
+      <br />
+      <label for="start">Start Time (in seconds):</label>
+      <input type="number" name="start" min="0" step="1" required />
+      <br />
+      <label for="end">End Time (in seconds):</label>
+      <input type="number" name="end" min="0" step="1" required />
+      <br />
+      <input type="submit" value="Cut Audio" />
+    </form>
+  </body>
+</html>
